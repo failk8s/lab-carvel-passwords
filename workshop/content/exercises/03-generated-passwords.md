@@ -7,10 +7,10 @@ With this approach you also have to ensure you supply the same password if
 updating the configuration or resources later if upgrading else you could
 overwrite the original secret value with the password with a different value.
 This can be a problem where the secret served as the documentation for what
-the password was, but an application separately stored it when first deployed
-for later use. Here the value in the secret and what the application used
-could get out of sync and you could loose access to your application if you
-hadn't saved away the original password separately.
+the password was, but an application separately stored it as a hash when first
+deployed for later use. Here the value in the secret and what the application
+used could get out of sync and you could loose access to your application if
+you hadn't saved away the original password separately.
 
 Where as with ``ytt`` we have to supply the password, other template systems
 available for Kubernetes have a way to automatically generate randomized
