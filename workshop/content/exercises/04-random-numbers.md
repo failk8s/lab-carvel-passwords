@@ -42,13 +42,13 @@ use it to hold state variables required.
 Now lets look at a YAML template file which attempts to use this module.
 
 ```editor:open-file
-file: ~/exercises/resources-v2/secret.star
+file: ~/exercises/resources-v2/secret.yaml
 ```
 
 It imports the ``random`` module, calling ``random()`` to generate a value,
 converting that to a string value to store in the secret.
 
-Running this though:
+Processing this though with ``ytt``:
 
 ```terminal:execute
 command: ytt -f resources-v2/
@@ -75,19 +75,19 @@ ytt: Error:
 
 There are two issues here.
 
-The first results from the debug we left in the code of the module. That is,
-it appears the module is imported and processed twice, even though we only use
-it once.
+The first is apparent from the debug statements we left in the code of the
+module. That is, it appears the module is imported and processed twice, even
+though we only use it once.
 
 This is a bit odd, but otherwise doesn't appear in itself to affect any use of
-Starlark modules by ``ytt``. So am not sure if this is a bug in how ``ytt``
-uses Starlark. I would have expected the module to only be imported and
+Starlark modules by ``ytt``. It is not obvious if this is a bug in how ``ytt``
+uses Starlark. One would have expected the module to only be imported and
 processed once.
 
 The bigger problem though derives from how Starlark modules work.
 
 The issue here is that once a module is imported, all global variables, and
-recursively any data structures referred to by those global variables, are
+recursively any data structures referred to by those global variables are
 frozen. In other words everything in the module becomes read only.
 
 As a consequence, even though our random number generator appeared to do the
