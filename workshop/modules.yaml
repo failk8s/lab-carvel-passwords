@@ -9,6 +9,8 @@ modules:
         name: Supplying Passwords
     exercises/02-passwords-with-ytt:
         name: Passwords with ytt
+    exercises/03-generated-passwords:
+        name: Generated Passwords
     exercises/99-outstanding-issues:
         name: Outstanding Issues
     workshop-summary:

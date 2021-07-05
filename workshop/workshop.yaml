@@ -6,5 +6,6 @@ modules:
     - setup-environment
     - exercises/01-supplying-passwords
     - exercises/02-passwords-with-ytt
+    - exercises/03-generated-passwords
     - exercises/99-outstanding-issues
     - workshop-summary

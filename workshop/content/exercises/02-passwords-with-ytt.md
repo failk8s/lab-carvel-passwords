@@ -18,7 +18,8 @@ requiring an extra step in any deployment procedures.
 When using the Carvel tools to manage deployment of an application, we can
 still have the secret resource definition under source code control, but can
 use the template mechanism of ``ytt`` to substitute the value of the secret
-at the time of deployment.
+at the time of deployment. This can be seen in the ``secret.yaml`` file of
+our first example.
 
 ```editor:select-matching-text
 file: ~/exercises/resources-v1/secret.yaml
@@ -53,10 +54,10 @@ when ``ytt`` is run:
 command: ytt -f resources-v1/ -v password=top-secret
 ```
 
-although this isn't actually recommended since the command line will saved
-in the shell history and so the password would still be visible later.
+although this isn't actually recommended since the command line will be saved
+in the shell history and the password could thus be discovered later.
 
-The recommended method therefore is to create a separate values file, as
+The recommended method therefore is to create a separate values file and
 reference it when running ``ytt``.
 
 ```terminal:execute

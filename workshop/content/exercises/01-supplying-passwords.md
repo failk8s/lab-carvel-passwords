@@ -11,7 +11,7 @@ For Kubernetes the resource type which should be used to supply passwords in
 this way should be a secret, although if dealing with an operator, this might
 instead need to be passed using a custom resource.
 
-For the case of using a Kubernetes resource,the resource definition would be:
+For the case of using a Kubernetes secret, the resource definition would be:
 
 ```
 apiVersion: v1
@@ -49,4 +49,7 @@ decoded to get the original value.
 Note that even when stored in the Kubernetes cluster no encryption is done on
 the values of secrets. In fact the only extra guarantees that are provided in
 respect of secrets over other resources is that they will never be stored on
-disk of any nodes in the cluster.
+the disk of any worker nodes in the cluster and instead will only be kept in
+memory. This ensures that if a node is removed from a cluster and the machine
+disposed of, that someone couldn't read the secrets from the node filesystem
+retained on disk were the disk not wiped correctly.
