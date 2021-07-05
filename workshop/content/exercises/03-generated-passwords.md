@@ -9,7 +9,7 @@ overwrite the original secret value with the password with a different value.
 This can be a problem where the secret served as the documentation for what
 the password was, but an application separately stored it when first deployed
 for later use. Here the value in the secret and what the application used
-clould get out of sync and you could loose access to your application if you
+could get out of sync and you could loose access to your application if you
 hadn't saved away the original password separately.
 
 Where as with ``ytt`` we have to supply the password, other template systems
@@ -42,17 +42,19 @@ an upgrade query back the original value of a password from the currently
 deployed secret and reuse it, or skip setting a new value at all.
 
 This mechanism will only work where the Helm client is being used to perform
-an upgrade directly against the cluster. It will not work when using Helm
-as a standalone client to generate the Kubernetes resources which are then
-later applied to the cluster using ``kubectl apply`` or ``kapp``.
+an upgrade directly against the cluster, as access to the original resources
+is required. It will not work when using Helm as a standalone client to
+generate the Kubernetes resources which are then later applied to the cluster
+using ``kubectl apply`` or ``kapp``.
 
 Because of problems like this that can arise, ``ytt`` doesn't provide any
-builtin features for generate random values. Instead it takes the view that
+builtin features for generating random values. Instead it takes the view that
 the set of resources created should be deterministic, and that running ``ytt``
 should always produce the same output for the same data input values.
 
 That said, this doesn't mean that it isn't possible to generate randomized
 values when using ``ytt`` and the next part of this workshop will explain how
-it can actually done. In presenting this solution, it will be shown that even
-though randomized values are generated, it can still be made deterministic, or
-at least to a level which is adequate for simple uses cases.
+it can actually be done. In presenting this solution, it will be shown that
+even though randomized values are generated, it can still be made
+deterministic, or at least to a level which is adequate for a subset of uses
+cases.
