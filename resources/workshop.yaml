@@ -1,17 +1,13 @@
 apiVersion: training.eduk8s.io/v1alpha2
 kind: Workshop
 metadata:
-  name: lab-markdown-sample
+  name: lab-carvel-passwords
 spec:
-  title: Markdown Sample
-  description: A sample workshop using Markdown
-  vendor: eduk8s.io
-  difficulty: beginner
-  duration: 15m
-  url: https://github.com/eduk8s/lab-markdown-sample
+  title: Carvel Passwords
+  description: Workshop exploring password generation using Carvel ytt templates.
+  url: https://github.com/failk8s/lab-carvel-passwords
   content:
-    #image: quay.io/eduk8s/lab-markdown-sample:master
-    files: github.com/eduk8s/lab-markdown-sample
+    files: github.com/failk8s/lab-carvel-passwords
   session:
     namespaces:
       budget: small
@@ -19,7 +15,5 @@ spec:
       terminal:
         enabled: true
         layout: split
-      console:
-        enabled: true
       editor:
         enabled: true
