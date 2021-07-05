@@ -1,1 +1,2 @@
-This is the initial landing page for your workshop. Include in this page a description of what your workshop is about.
+This workshop explores the problem of providing randomized passwords to
+applications when using Carvel and ``ytt`` templates.
