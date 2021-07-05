@@ -29,8 +29,8 @@ number and the hash stored as the new seed.
 It isn't necessarily the most elegant random number generator but will
 suffice for this disucssion.
 
-Before moving on and trying it, you may see something happening with the
-``__globals__`` variable.
+Before moving on and trying it, you may see something strange happening with
+the ``__globals__`` variable.
 
 The reason for this is that Starlark doesn't permit functions to update
 literal values at global scope in a module. In other words, it doesn't support
@@ -86,8 +86,8 @@ processed once.
 
 The bigger problem though derives from how Starlark modules work.
 
-The issue here is that once a module is imported, all global variables, and
-recursively any data structures referred to by those global variables are
+The issue here is that once a module has been loaded, all global variables,
+and recursively any data structures referred to by those global variables are
 frozen. In other words everything in the module becomes read only.
 
 As a consequence, even though our random number generator appeared to do the
