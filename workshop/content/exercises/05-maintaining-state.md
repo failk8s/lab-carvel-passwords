@@ -25,16 +25,16 @@ code needing to generate random numbers create a state object by first calling
 time it is called. This will generate a new random value and update the
 supplied state object.
 
-This module would be used as shown in ``resources-v3/secret-1.yaml``.
+This module would be used as shown in ``resources-v3/secret-1a.yaml``.
 
 ```editor:open-file
-file: ~/exercises/resources-v3/secret-1.yaml
+file: ~/exercises/resources-v3/secret-1a.yaml
 ```
 
 Run ``ytt`` to see the output which would be generated for this case.
 
 ```terminal:execute
-command: ytt -f resources-v3/random.star -f resources-v3/secret-1.yaml -f resources-v3/values.yaml
+command: ytt -f resources-v3/random.star -f resources-v3/secret-1a.yaml -f resources-v3/values.yaml
 ```
 
 The output should be something like.
@@ -43,10 +43,15 @@ The output should be something like.
 apiVersion: v1
 kind: Secret
 metadata:
-  name: mysecret-1
+  name: mysecret-1a
 type: Opaque
 stringData:
   password-1: "496694764"
   password-2: "956600491"
   password-3: "206321392"
 ```
+
+In fact, so long as the Starlark implementation of ``hash()`` doesn't change
+it should be exactly as shown, indicating the result would always be the same.
+Run the same command a few more times to satisfy yourself that the output
+is always the same.
