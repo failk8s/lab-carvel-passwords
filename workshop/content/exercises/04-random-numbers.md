@@ -9,7 +9,7 @@ relatively small number of random numbers. Thus if we can get any measure of
 randomness, it likely will be sufficient.
 
 With that goal, consider the first attempt at a random number generator found
-in the ``random.star`` file.
+in the ``resources-v2/random.star`` file.
 
 ```editor:open-file
 file: ~/exercises/resources-v2/random.star
@@ -39,7 +39,8 @@ the analogous ``global`` keyword from Python.
 The workaround for this is to create a dictionary as a global variable and
 use it to hold state variables required.
 
-Now lets look at a YAML template file which attempts to use this module.
+Now lets look at a YAML template file which attempts to use this module in
+``resources-v2/secret.yaml``.
 
 ```editor:open-file
 file: ~/exercises/resources-v2/secret.yaml
