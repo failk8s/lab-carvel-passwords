@@ -5,9 +5,9 @@ def seed(value=None):
   return { "value": json.encode((data.values.seed, value)) }
 end
 
-def random(seed):
-  value = hash(seed["value"])
+def random(state):
+  value = hash(state["value"])
   value = -value if value < 0 else value
-  seed["value"] = str(value)
+  state["value"] = str(value)
   return value
 end
