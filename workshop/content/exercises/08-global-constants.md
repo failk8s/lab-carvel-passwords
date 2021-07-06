@@ -4,7 +4,8 @@ is required to be inserted into multiple resources.
 
 One solution to this is to have the different resources defined in the same
 YAML file, although you need to ensure that the value is only generated once
-and saved to a global variable which is then inserted into each resource.
+and saved to a global variable which is then inserted into each resource. This
+is demonstrated in ``resources-v4/secret-2.yaml``.
 
 ```editor:open-file
 file: ~/exercises/resources-v4/secret-2.yaml
@@ -38,7 +39,7 @@ stringData:
 
 If you don't want to place the resources in the same file, you can instead
 create a Starlark module where you generate any global contstants for the
-generated values. This can then be included where ever it is required.
+generated values. This can then be loaded where ever it is required.
 Because the module is marked read only once first loaded there is no risk
 the value can change.
 
@@ -75,4 +76,4 @@ stringData:
 It was the same value here as we used the same input value when generating the
 seed, and although you could do that in each resource file as well,
 centralising the value in a constants module means you only have to change one
-place.
+place when implementing changes related to the generated values.
