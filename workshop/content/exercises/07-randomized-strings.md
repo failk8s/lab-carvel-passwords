@@ -43,16 +43,16 @@ isRegex: true
 after: 10
 ```
 
-As example of usage can be found in ``resources-v4/secret.yaml``.
+As example of usage can be found in ``resources-v4/secret-1.yaml``.
 
 ```editor:open-file
-file: ~/exercises/resources-v4/secret.yaml
+file: ~/exercises/resources-v4/secret-1.yaml
 ```
 
 Run ``ytt`` of this example:
 
 ```terminal:execute
-command: ytt -f resources-v4/
+command: ytt -f resources-v4/random.star -f resources-v4/secret-1.yaml
 ```
 
 and the output should be:
@@ -61,22 +61,22 @@ and the output should be:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: mysecret
+  name: mysecret-1
 type: Opaque
 stringData:
-  password-1: 97aFzFMj86GJ5A_D
-  password-2: HvgEka@d
-  token-1: c5Fyqk2ydSPKThLFUN4GlJVSdyjhmOANzFAokHoAXWsKrOEZveifGPxLhabF8Tdh
-  token-2: L1pp0IK8h7qQTczdamN2tImhyUPfpWjH
-  hostname-1: rough-dawn-4505
-  hostname-2: noisy-sun-e502dbd9c2
+  password-1: 6C#SePk7SZf=8?DY
+  password-2: RA8pP!jb
+  token-1: WHS0zjOlfcxg9gomOSVtELtIlBNeWav4Cjrq1ONSPsCtH3vVUiQz0i2QoB0gQytC
+  token-2: NQtiTYelx2lSOTIKAeYHa8YSKm7wyBgl
+  hostname-1: shiny-pond-0556
+  hostname-2: shy-heart-e57bd525ae
 ```
 
 As before, the master seed can still be changed and all generated values will
 be affected, with:
 
 ```terminal:execute
-command: ytt -f resources-v4/ -v seed=1234567890
+command: ytt -f resources-v4/random.star -f resources-v4/secret-1.yaml -v seed=1234567890
 ```
 
 generating:
@@ -85,13 +85,13 @@ generating:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: mysecret
+  name: mysecret-1
 type: Opaque
 stringData:
-  password-1: dvBFHMhmU2VvRTfy
-  password-2: SgcKteE_
-  token-1: SEs7qB3x9qFE02W5q08E3DmKEcer0lE8Aix5IN3LHqfdpJQyjtgEsZRoXrDolqpV
-  token-2: 4YHyAOi46TlKS7QZxw33zvL0t9PwWVWG
-  hostname-1: jolly-moon-2987
-  hostname-2: misty-grass-4885caaa87
+  password-1: eW4nMcM87%^R3$vB
+  password-2: 32mnFEsR
+  token-1: mRcfWAQ4Di8blmRITCMHLOmFxrLqvSGc0lJxKMyfSFTRxKfIQcRV4bVwP7fa2m84
+  token-2: EeW7huYUBcopSMFCYwSeH3d3MkoXao7m
+  hostname-1: noisy-glade-8179
+  hostname-2: nameless-union-3c8d1d0d4e
   ```
