@@ -4,10 +4,10 @@ relied on as the only solution. When using generated values it is always going
 to be good practice to allow them to be overridden through the data input
 values when running ``ytt``.
 
-For how this can be done check out ``resources-v4/secret-3.yaml``.
+For how this can be done check out ``resources-v4/secret-3a.yaml``.
 
 ```editor:open-file
-file: ~/exercises/resources-v4/secret-3.yaml
+file: ~/exercises/resources-v4/secret-3a.yaml
 ```
 
 You can see how it will check for the password being defined as a data input
@@ -16,7 +16,7 @@ value and if it is use that, but otherwise generate a password.
 Running ``ytt`` on this:
 
 ```terminal:execute
-command: ytt -f resources-v4/random.star -f resources-v4/secret-3.yaml -f resources-v4/values.yaml
+command: ytt -f resources-v4/random.star -f resources-v4/secret-3a.yaml -f resources-v4/values.yaml
 ```
 
 we get:
@@ -35,7 +35,7 @@ stringData:
 Now override the password using a data input value:
 
 ```terminal:execute
-command: ytt -f resources-v4/random.star -f resources-v4/secret-3.yaml -f resources-v4/values.yaml -v password1=top-secret
+command: ytt -f resources-v4/random.star -f resources-v4/secret-3a.yaml -f resources-v4/values.yaml -v password1=top-secret
 ```
 
 which should yield:
@@ -64,16 +64,16 @@ To remedy this problem we need to ensure that we still always generate
 every password and only after we do this override it with a supplied value.
 This ensures everything else stays the same.
 
-This version can been see in ``resources-v4/secret-4.yaml``.
+This version can been see in ``resources-v4/secret-3b.yaml``.
 
 ```editor:open-file
-file: ~/exercises/resources-v4/secret-4.yaml
+file: ~/exercises/resources-v4/secret-3b.yaml
 ```
 
 Processing this with ``ytt``:
 
 ```terminal:execute
-command: ytt -f resources-v4/random.star -f resources-v4/secret-4.yaml -f resources-v4/values.yaml
+command: ytt -f resources-v4/random.star -f resources-v4/secret-3b.yaml -f resources-v4/values.yaml
 ```
 
 we get:
@@ -92,7 +92,7 @@ stringData:
 which is the same as we had for the prior version, but overriding the password:
 
 ```terminal:execute
-command: ytt -f resources-v4/random.star -f resources-v4/secret-4.yaml -f resources-v4/values.yaml -v password1=top-secret
+command: ytt -f resources-v4/random.star -f resources-v4/secret-3b.yaml -f resources-v4/values.yaml -v password1=top-secret
 ```
 
 now yields:
