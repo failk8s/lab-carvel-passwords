@@ -23,6 +23,8 @@ modules:
         name: Global Variables
     exercises/09-overriding-values:
         name: Overriding Values
+    exercises/10-food-for-thought:
+        name: Food for Thought
     exercises/99-outstanding-issues:
         name: Outstanding Issues
     workshop-summary:

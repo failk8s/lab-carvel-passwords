@@ -13,5 +13,6 @@ modules:
     - exercises/07-randomized-strings
     - exercises/08-global-variables
     - exercises/09-overriding-values
+    - exercises/10-food-for-thought
     - exercises/99-outstanding-issues
     - workshop-summary
