@@ -66,8 +66,8 @@ This ensures everything else stays the same.
 
 This version can been see in ``resources-v4/secret-4.yaml``.
 
-```terminal:execute
-command: ytt -f resources-v4/random.star -f resources-v4/secret-4.yaml -f resources-v4/values.yaml
+```editor:open-file
+file: ~/exercises/resources-v4/secret-4.yaml
 ```
 
 Processing this with ``ytt``:
