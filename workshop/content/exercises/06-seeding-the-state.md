@@ -205,3 +205,9 @@ If you wanted to, instead of using a specific data value, you could also used
 ``data.values`` as input to ``seed()``. That is, all data input values. This
 way any change to the configuration would trigger different random values to
 be generated.
+
+Not only do we have a deterministic way of generating the same random values
+for the same input, we have an easy way of being able to force the generation
+of different random values through a master seed, or selectively if desired
+by tying the seed input values for a specific instance to a different data
+input value.
