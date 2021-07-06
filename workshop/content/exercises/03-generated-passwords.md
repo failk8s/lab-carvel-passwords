@@ -1,7 +1,8 @@
 With the configuration for the ``ytt`` templates currently used it is
-necessary to provide the password from an external source. This is going to
-be the most secure way of handling passwords, but as far as usability is
-concerned it is extra work.
+necessary to provide the password from an external source. This is going to be
+the most secure way of handling passwords, but as far as usability is
+concerned it is extra work and adds extra complexity even for simple use
+cases.
 
 With this approach you also have to ensure you supply the same password if
 updating the configuration or resources later if upgrading else you could
@@ -56,5 +57,4 @@ That said, this doesn't mean that it isn't possible to generate randomized
 values when using ``ytt`` and the next part of this workshop will explain how
 it can actually be done. In presenting this solution, it will be shown that
 even though randomized values are generated, it can still be made
-deterministic, or at least to a level which is adequate for a subset of uses
-cases.
+deterministic, or at least to a level which is adequate for many use cases.

@@ -80,7 +80,7 @@ though we only use it once.
 
 This is a bit odd, but otherwise doesn't appear in itself to affect any use of
 Starlark modules by ``ytt``. It is not obvious if this is a bug in how ``ytt``
-uses Starlark. One would have expected the module to only be imported and
+uses Starlark. One would have expected the module to only be loaded and
 processed once.
 
 The bigger problem though derives from how Starlark modules work.
