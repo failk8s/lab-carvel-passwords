@@ -8,5 +8,6 @@ modules:
     - exercises/02-passwords-with-ytt
     - exercises/03-generated-passwords
     - exercises/04-random-numbers
+    - exercises/05-maintaining-state
     - exercises/99-outstanding-issues
     - workshop-summary

@@ -13,6 +13,8 @@ modules:
         name: Generated Passwords
     exercises/04-random-numbers:
         name: Random Numbers
+    exercises/05-maintaining-state:
+        name: Maintaining State
     exercises/99-outstanding-issues:
         name: Outstanding Issues
     workshop-summary:

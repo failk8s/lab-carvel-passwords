@@ -26,7 +26,7 @@ convert the existing seed from an integer to a string and generate a hash
 value from it. The absolute value of the hash is returned as the random
 number and the hash stored as the new seed.
 
-It isn't necessarily the most elegant random number generator but will
+It isn't necessarily the most sophisticated random number generator but will
 suffice for this disucssion.
 
 Before moving on and trying it, you may see something strange happening with
@@ -57,18 +57,16 @@ command: ytt -f resources-v2/
 we get:
 
 ```
+DEBUG: random() = 0
 DEBUG: random() = 48
 DEBUG: random() = 1668
-DEBUG: random() = 1513383
+DEBUG: random() = 0
 DEBUG: random() = 48
 DEBUG: random() = 1668
-DEBUG: random() = 1513383
 ytt: Error: 
 - cannot insert into frozen hash table
-    in seed
-      11 |      __globals__["seed"] = value
     in random
-      19 |    seed(value)
+      11 |   __globals__["seed"] = str(value)
     in <toplevel>
       secret.yaml:10 |   password: #@ str(random())
 ```
