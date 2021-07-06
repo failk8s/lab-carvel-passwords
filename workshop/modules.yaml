@@ -21,6 +21,8 @@ modules:
         name: Randomized Strings
     exercises/08-global-variables:
         name: Global Variables
+    exercises/09-overriding-values:
+        name: Overriding Values
     exercises/99-outstanding-issues:
         name: Outstanding Issues
     workshop-summary:

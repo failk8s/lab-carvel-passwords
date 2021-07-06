@@ -2,7 +2,7 @@ load("@ytt:data", "data")
 load("@ytt:json", "json")
 
 def seed(value=None):
-  master = getattr(data.values, "seed") if data.values else None
+  master = getattr(data.values, "seed") if data.values and hasattr(data.values, "seed") else None
   return { "value": json.encode((master, value)) }
 end
 

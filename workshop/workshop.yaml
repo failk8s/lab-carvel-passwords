@@ -12,5 +12,6 @@ modules:
     - exercises/06-seeding-the-state
     - exercises/07-randomized-strings
     - exercises/08-global-variables
+    - exercises/09-overriding-values
     - exercises/99-outstanding-issues
     - workshop-summary
