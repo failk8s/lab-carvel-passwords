@@ -17,6 +17,8 @@ modules:
         name: Maintaining State
     exercises/06-seeding-the-state:
         name: Seeding the State
+    exercises/07-randomized-strings:
+        name: Randomized Strings
     exercises/99-outstanding-issues:
         name: Outstanding Issues
     workshop-summary:

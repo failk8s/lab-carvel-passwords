@@ -2,7 +2,8 @@ load("@ytt:data", "data")
 load("@ytt:json", "json")
 
 def seed(value=None):
-  return { "value": json.encode((data.values.seed, value)) }
+  master = getattr(data.values, "seed") if data.values else None
+  return { "value": json.encode((master, value)) }
 end
 
 def random(state):
